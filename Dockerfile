@@ -11,7 +11,6 @@
 
 # Optional: Expose the port on which your application will run
 #EXPOSE 8080
----------------------------------------------------------------------------------
 FROM alpine/git as clone
 MAINTAINER stangella<stangella9@gmail.com>
 WORKDIR /app
