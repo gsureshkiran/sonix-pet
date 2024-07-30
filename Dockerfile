@@ -19,6 +19,8 @@ RUN git clone https://github.com/gsureshkiran/sonix-pet.git
 FROM maven:3.8.4-openjdk-17 as build
 WORKDIR /app
 COPY --from=clone  /app/sonix-pet  /app
+
 RUN mvn package
-RUN cd target
-CMD ["java", "-jar", "spring-petclinic-3.3.0-SNAPSHOT.jar"]
+COPY --from=build /app/target/spring-petclinic-3.3.0-SNAPSHOT.jar /app
+ENTRYPOINT ["java", "-jar", "spring-petclinic-3.3.0-SNAPSHOT.jar"]
+EXPOSE 8080
