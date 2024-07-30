@@ -10,4 +10,4 @@ COPY target/spring-petclinic-3.3.0-SNAPSHOT.jar app.jar
 ENTRYPOINT ["java", "-jar", "spring-petclinic-3.3.0-SNAPSHOT.jar"]
 
 # Optional: Expose the port on which your application will run
-EXPOSE 8080
+#EXPOSE 8080
